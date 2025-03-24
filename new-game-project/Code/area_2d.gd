@@ -3,7 +3,6 @@ extends Area2D
 @onready var animated_sprite = $withperson
 @onready var interact_sprite = $InteractE
 @onready var interact_sprite_light = $InteractE/PointLight2D
-@onready var voice_player = $VoicePlayer
 var player_inside = false
 var done = false
 var player
@@ -35,10 +34,6 @@ func _process(delta: float) -> void:
 		animated_sprite.play("person")
 		hide_interactE()
 		dialogue_played = true
-		
-		# Play the voice line
-		if voice_player and voice_player.stream:
-			voice_player.play()
 		
 		if player:
 			player.set_physics_process(false)

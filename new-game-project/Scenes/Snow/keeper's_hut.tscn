@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2o31d3iuabky"]
+[gd_scene load_steps=21 format=3 uid="uid://b2o31d3iuabky"]
 
 [ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://Scenes/Snow/Bg/para/clouds and hill .png" id="1_ue1sx"]
 [ext_resource type="Texture2D" uid="uid://bjo0w4vjxybxx" path="res://Scenes/Snow/Bg/para/paramiddlelayer.png" id="2_xuqyw"]
 [ext_resource type="Texture2D" uid="uid://c8em0b0wajne8" path="res://Scenes/Snow/Bg/para/frontl.png" id="3_xuqyw"]
 [ext_resource type="Texture2D" uid="uid://cajtea2x46hlk" path="res://Scenes/Snow/sprites/hut.png" id="4_jl6ms"]
 [ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_a3e6o"]
+[ext_resource type="Script" uid="uid://brvvdt0r3gprb" path="res://Code/area_2d.gd" id="5_g0qgt"]
+[ext_resource type="Texture2D" uid="uid://b52h4m2wjibs2" path="res://misc art/light.png" id="6_krcrt"]
+[ext_resource type="Texture2D" uid="uid://bocpii2qvv6ro" path="res://misc art/hud/interact e.png" id="7_otvvm"]
+[ext_resource type="Texture2D" uid="uid://b8puikff0fu2l" path="res://Scenes/Snow/sprites/hutwithpertsont.png" id="7_xbadk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3e6o"]
 atlas = ExtResource("4_jl6ms")
@@ -43,7 +47,43 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3e6o"]
-size = Vector2(27, 20)
+size = Vector2(27, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otvvm"]
+atlas = ExtResource("7_xbadk")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_085hq"]
+atlas = ExtResource("7_xbadk")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnd1r"]
+atlas = ExtResource("7_xbadk")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o6dq"]
+atlas = ExtResource("7_xbadk")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6eth5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otvvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_085hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnd1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o6dq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="keeper\'s hut" type="Node2D"]
 
@@ -88,13 +128,41 @@ frame_progress = 0.0368119
 [node name="Node" type="Node" parent="parallax/Parallax2D3"]
 
 [node name="Area2D" type="Area2D" parent="parallax/Parallax2D3/Node"]
+script = ExtResource("5_g0qgt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="parallax/Parallax2D3/Node/Area2D"]
-position = Vector2(-193.5, 154)
+position = Vector2(-194, 155.5)
 shape = SubResource("RectangleShape2D_a3e6o")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("5_a3e6o")]
+[node name="withperson" type="AnimatedSprite2D" parent="parallax/Parallax2D3/Node/Area2D"]
+position = Vector2(-194, 93)
+sprite_frames = SubResource("SpriteFrames_6eth5")
+
+[node name="InteractE" type="Sprite2D" parent="parallax/Parallax2D3/Node/Area2D"]
+position = Vector2(-194, 103)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_otvvm")
+
+[node name="PointLight2D" type="PointLight2D" parent="parallax/Parallax2D3/Node/Area2D/InteractE"]
+position = Vector2(9.53674e-06, -3.8147e-06)
+scale = Vector2(0.0498047, 0.0556641)
+color = Color(1, 1, 0, 1)
+texture = ExtResource("6_krcrt")
+
+[node name="PointLight2D" type="PointLight2D" parent="parallax/Parallax2D3"]
+position = Vector2(-193, 80)
+scale = Vector2(0.158203, 0.115234)
+color = Color(1, 0.576471, 0, 1)
+texture = ExtResource("6_krcrt")
+
+[node name="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("5_a3e6o")]
 position = Vector2(-512, 149)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-1, -59)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.583362, 0.486894, 0.435048, 1)
+
+[connection signal="body_entered" from="parallax/Parallax2D3/Node/Area2D" to="parallax/Parallax2D3/Node/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="parallax/Parallax2D3/Node/Area2D" to="parallax/Parallax2D3/Node/Area2D" method="_on_body_exited"]
