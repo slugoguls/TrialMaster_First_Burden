@@ -1,0 +1,211 @@
+[gd_scene load_steps=27 format=3 uid="uid://coa5tbtfdsb1c"]
+
+[ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://para/clouds and hill .png" id="1_p65ah"]
+[ext_resource type="Texture2D" uid="uid://bjo0w4vjxybxx" path="res://para/paramiddlelayer.png" id="2_bk4dj"]
+[ext_resource type="Texture2D" uid="uid://cbltoxkqclbqh" path="res://para/frontr.png" id="3_5hgu5"]
+[ext_resource type="Texture2D" uid="uid://cajtea2x46hlk" path="res://hut.png" id="5_pkvlg"]
+[ext_resource type="Texture2D" uid="uid://b52h4m2wjibs2" path="res://character/light.png" id="6_6c0kc"]
+[ext_resource type="Script" uid="uid://brvvdt0r3gprb" path="res://area_2d.gd" id="8_jl18h"]
+[ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="8_ob3pw"]
+[ext_resource type="Texture2D" uid="uid://b8puikff0fu2l" path="res://hutwithpertsont.png" id="9_lkwnq"]
+[ext_resource type="Script" uid="uid://4ek1tv1ol0a1" path="res://right.gd" id="9_m47de"]
+[ext_resource type="Texture2D" uid="uid://bocpii2qvv6ro" path="res://hud/interact e.png" id="9_o2qrx"]
+[ext_resource type="Texture2D" uid="uid://bvntm2up06u65" path="res://hutpersonright4.png" id="10_74cev"]
+[ext_resource type="Script" uid="uid://ph4eyho78y0o" path="res://left.gd" id="11_fsnc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sg6jl"]
+size = Vector2(1922, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rncah"]
+atlas = ExtResource("5_pkvlg")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilx5n"]
+atlas = ExtResource("5_pkvlg")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjlue"]
+atlas = ExtResource("5_pkvlg")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hycti"]
+atlas = ExtResource("5_pkvlg")
+region = Rect2(480, 0, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ko81n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rncah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilx5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjlue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hycti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb07q"]
+atlas = ExtResource("9_lkwnq")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovl4u"]
+atlas = ExtResource("9_lkwnq")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sb57w"]
+atlas = ExtResource("9_lkwnq")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxscf"]
+atlas = ExtResource("9_lkwnq")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yv7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb07q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovl4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sb57w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxscf")
+}],
+"loop": false,
+"name": &"person",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4641o"]
+size = Vector2(29, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74cev"]
+size = Vector2(18, 25.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m47de"]
+size = Vector2(17, 12)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="parallax" type="Node2D" parent="."]
+
+[node name="clouds and hills" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+
+[node name="CloudsAndHill" type="Sprite2D" parent="parallax/clouds and hills"]
+position = Vector2(160, 90)
+texture = ExtResource("1_p65ah")
+
+[node name="middlelayer" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.3, 0)
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+
+[node name="backtrees" type="Sprite2D" parent="parallax/middlelayer"]
+position = Vector2(160, 90)
+texture = ExtResource("2_bk4dj")
+
+[node name="Parallax2D2" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.6, 0)
+repeat_size = Vector2(320, 0)
+repeat_times = 2
+
+[node name="Front" type="Sprite2D" parent="parallax/Parallax2D2"]
+position = Vector2(160, 90)
+texture = ExtResource("3_5hgu5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="parallax"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parallax/StaticBody2D"]
+position = Vector2(320, 180)
+shape = SubResource("RectangleShape2D_sg6jl")
+
+[node name="Parallax2D3" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.6, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="parallax/Parallax2D3"]
+position = Vector2(-189, 84)
+scale = Vector2(0.119141, 0.0937499)
+color = Color(0.764706, 0.466667, 0, 1)
+energy = 2.0
+texture = ExtResource("6_6c0kc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="parallax/Parallax2D3"]
+position = Vector2(-190, 81)
+sprite_frames = SubResource("SpriteFrames_ko81n")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0606341
+
+[node name="PointLight2D2" type="PointLight2D" parent="parallax/Parallax2D3"]
+position = Vector2(-173, 31)
+scale = Vector2(2.94531, 0.296822)
+color = Color(0.635591, 0.48455, 0.237816, 1)
+energy = 0.75
+texture = ExtResource("6_6c0kc")
+
+[node name="keeper int" type="Area2D" parent="parallax/Parallax2D3"]
+script = ExtResource("8_jl18h")
+
+[node name="InteractE" type="Sprite2D" parent="parallax/Parallax2D3/keeper int"]
+position = Vector2(-192, 103)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_o2qrx")
+
+[node name="PointLight2D" type="PointLight2D" parent="parallax/Parallax2D3/keeper int/InteractE"]
+position = Vector2(-6.91414e-06, 0.714287)
+scale = Vector2(0.0223214, 0.0251116)
+color = Color(0.832347, 0.831285, 0, 1)
+texture = ExtResource("6_6c0kc")
+
+[node name="withperson" type="AnimatedSprite2D" parent="parallax/Parallax2D3/keeper int"]
+position = Vector2(-191, 94)
+sprite_frames = SubResource("SpriteFrames_3yv7i")
+animation = &"person"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parallax/Parallax2D3/keeper int"]
+position = Vector2(-191.5, 152)
+shape = SubResource("RectangleShape2D_4641o")
+
+[node name="right" type="Area2D" parent="parallax/Parallax2D3/keeper int"]
+script = ExtResource("9_m47de")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parallax/Parallax2D3/keeper int/right"]
+position = Vector2(-151, 157.25)
+shape = SubResource("RectangleShape2D_74cev")
+
+[node name="personright" type="Sprite2D" parent="parallax/Parallax2D3/keeper int/right"]
+position = Vector2(-191, 94)
+texture = ExtResource("10_74cev")
+
+[node name="left" type="Area2D" parent="parallax/Parallax2D3/keeper int/right"]
+script = ExtResource("11_fsnc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parallax/Parallax2D3/keeper int/right/left"]
+position = Vector2(-168.5, 164)
+shape = SubResource("RectangleShape2D_m47de")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.697083, 0.576161, 0.465878, 1)
+
+[node name="player" parent="." instance=ExtResource("8_ob3pw")]
+position = Vector2(-629, 140)
+
+[connection signal="body_entered" from="parallax/Parallax2D3/keeper int" to="parallax/Parallax2D3/keeper int" method="_on_body_entered"]
+[connection signal="body_exited" from="parallax/Parallax2D3/keeper int" to="parallax/Parallax2D3/keeper int" method="_on_body_exited"]
+[connection signal="body_entered" from="parallax/Parallax2D3/keeper int/right" to="parallax/Parallax2D3/keeper int/right" method="_on_body_entered"]
+[connection signal="body_entered" from="parallax/Parallax2D3/keeper int/right/left" to="parallax/Parallax2D3/keeper int/right/left" method="_on_body_entered"]

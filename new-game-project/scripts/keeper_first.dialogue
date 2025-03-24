@@ -1,0 +1,11 @@
+~ start
+The keeper: A monk like you does not belong here.
+The keeper: If you have come to get rid of your sins, I should warn you
+The keeper: The path ahead is not for one who guilts but for one who wants peace
+The keeper: You carry your family's curse and that has left you alone
+The keeper: follow the path and you will find my brother near the trial grounds
+The keeper: I'm not sure if he can get rid of the curse
+The keeper: But he will help you get peace with it
+The keeper: Take this map, it will help you navigate these mountains. 
+do DialogueManager.dialogue_ended.emit()
+=> END 

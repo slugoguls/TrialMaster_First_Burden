@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://04k7ksdqvamf"
+path="res://.godot/imported/keeper_first.dialogue-358e3830a7a991167f388d1005a4fbb8.tres"
+
+[deps]
+
+source_file="res://scripts/keeper_first.dialogue"
+dest_files=["res://.godot/imported/keeper_first.dialogue-358e3830a7a991167f388d1005a4fbb8.tres"]
+
+[params]
+
+defaults=true

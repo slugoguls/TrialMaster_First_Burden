@@ -1,0 +1,205 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6i5hryvh755i"]
+
+[ext_resource type="Script" uid="uid://yond4griyb6o" path="res://Code/monk.gd" id="1_og2l7"]
+[ext_resource type="Texture2D" uid="uid://4h8rv1n8vshs" path="res://character/widebattlemonkt.png" id="1_prv2j"]
+[ext_resource type="Texture2D" uid="uid://bv7chy0bxjjws" path="res://misc art/hud/health and mana.png" id="2_uf21q"]
+[ext_resource type="Texture2D" uid="uid://ca2gs83o3ovwe" path="res://misc art/hud/Map for game.png" id="4_s54ac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og2l7"]
+size = Vector2(20, 7)
+
+[sub_resource type="Animation" id="Animation_og2l7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+
+[sub_resource type="Animation" id="Animation_yhsp5"]
+resource_name = "idle_l"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [72, 73, 74]
+}
+
+[sub_resource type="Animation" id="Animation_prv2j"]
+resource_name = "idle_r"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_jowuh"]
+resource_name = "light_attack_l"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [64, 65, 66, 67, 68, 69]
+}
+
+[sub_resource type="Animation" id="Animation_kdqb1"]
+resource_name = "light_attack_r"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
+}
+
+[sub_resource type="Animation" id="Animation_s54ac"]
+resource_name = "run_l"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37, 38, 39]
+}
+
+[sub_resource type="Animation" id="Animation_uf21q"]
+resource_name = "run_r"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31]
+}
+
+[sub_resource type="Animation" id="Animation_jj1pw"]
+resource_name = "wepon_idle_l"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [80, 81, 82]
+}
+
+[sub_resource type="Animation" id="Animation_epmmu"]
+resource_name = "wepon_idle_r"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [40, 41, 42]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uf21q"]
+_data = {
+&"RESET": SubResource("Animation_og2l7"),
+&"idle_l": SubResource("Animation_yhsp5"),
+&"idle_r": SubResource("Animation_prv2j"),
+&"light_attack_l": SubResource("Animation_jowuh"),
+&"light_attack_r": SubResource("Animation_kdqb1"),
+&"run_l": SubResource("Animation_s54ac"),
+&"run_r": SubResource("Animation_uf21q"),
+&"wepon_idle_l": SubResource("Animation_jj1pw"),
+&"wepon_idle_r": SubResource("Animation_epmmu")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_og2l7")
+
+[node name="health" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-124, -134)
+texture = ExtResource("2_uf21q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("1_prv2j")
+hframes = 8
+vframes = 11
+frame = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 18)
+shape = SubResource("RectangleShape2D_og2l7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uf21q")
+}
+
+[node name="Map" type="Sprite2D" parent="."]
+visible = false
+light_mask = 2
+z_index = 1
+position = Vector2(1, -60)
+texture = ExtResource("4_s54ac")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, -58)
+enabled = false
+limit_right = 320
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
