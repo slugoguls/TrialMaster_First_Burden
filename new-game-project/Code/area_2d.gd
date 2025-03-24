@@ -20,6 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 		player_inside = true
 		player = body
 		fade_in_interactE()
+		GLobal.first_load = false
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
