@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://crvjp3h5dm5w8"]
+
+[ext_resource type="Texture2D" uid="uid://ds2k8lmspyk55" path="res://Scenes/SnowToTrail/bg/Transition scene.png" id="1_10mh6"]
+[ext_resource type="Script" uid="uid://dpgrouvvu3r2f" path="res://Code/snow_trans.gd" id="1_bunvl"]
+[ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://Scenes/Snow/Bg/para/clouds and hill .png" id="1_rye8w"]
+[ext_resource type="Texture2D" uid="uid://bjo0w4vjxybxx" path="res://Scenes/Snow/Bg/para/paramiddlelayer.png" id="2_bunvl"]
+
+[node name="snowTrans" type="Node2D"]
+script = ExtResource("1_bunvl")
+
+[node name="para" type="Parallax2D" parent="."]
+
+[node name="CloudsAndHill" type="Sprite2D" parent="para"]
+position = Vector2(160, 90)
+texture = ExtResource("1_rye8w")
+
+[node name="Parallax2D2" type="Parallax2D" parent="para"]
+
+[node name="Sprite2D" type="Sprite2D" parent="para/Parallax2D2"]
+position = Vector2(160, 90)
+texture = ExtResource("2_bunvl")
+
+[node name="TransitionScene" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1_10mh6")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(16, 103)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 128, 123, 128, 169, 139, 180, 139, 198, 152, 246, 157, 279, 176, 319, 180, 312, 195, -26, 200, -25, 128, -2, 128)

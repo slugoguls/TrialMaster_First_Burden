@@ -12,6 +12,7 @@ var is_map_open = false
  # Gravity is disabled by default
 
 func _ready():
+	PlayerManager.player_instance = self
 	add_to_group("player")
 	map_sprite.visible = false
 

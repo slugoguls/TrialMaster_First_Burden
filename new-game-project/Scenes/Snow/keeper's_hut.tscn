@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b2o31d3iuabky"]
+[gd_scene load_steps=28 format=3 uid="uid://b2o31d3iuabky"]
 
 [ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://Scenes/Snow/Bg/para/clouds and hill .png" id="1_ue1sx"]
 [ext_resource type="Texture2D" uid="uid://bjo0w4vjxybxx" path="res://Scenes/Snow/Bg/para/paramiddlelayer.png" id="2_xuqyw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://4ek1tv1ol0a1" path="res://Code/right.gd" id="9_085hq"]
 [ext_resource type="Script" uid="uid://ph4eyho78y0o" path="res://Code/left.gd" id="10_xnd1r"]
 [ext_resource type="Texture2D" uid="uid://bvntm2up06u65" path="res://Scenes/Snow/sprites/hutpersonright4.png" id="11_3o6dq"]
+[ext_resource type="Script" uid="uid://ck3dpq1wqgiwj" path="res://Code/nextScene.gd" id="13_6eth5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3e6o"]
 atlas = ExtResource("4_jl6ms")
@@ -94,6 +95,9 @@ size = Vector2(2, 25.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3o6dq"]
 size = Vector2(2, 26)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eth5"]
+size = Vector2(13, 49)
+
 [node name="keeper\'s hut" type="Node2D"]
 
 [node name="parallax" type="Node2D" parent="."]
@@ -101,7 +105,7 @@ size = Vector2(2, 26)
 [node name="Parallax2D" type="Parallax2D" parent="parallax"]
 scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(320, 0)
-repeat_times = 3
+repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/Parallax2D"]
 position = Vector2(160, 90)
@@ -110,7 +114,7 @@ texture = ExtResource("1_ue1sx")
 [node name="Parallax2D2" type="Parallax2D" parent="parallax"]
 scroll_scale = Vector2(0.3, 0)
 repeat_size = Vector2(320, 0)
-repeat_times = 3
+repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/Parallax2D2"]
 position = Vector2(160, 90)
@@ -119,7 +123,7 @@ texture = ExtResource("2_xuqyw")
 [node name="front and hut" type="Parallax2D" parent="parallax"]
 scroll_scale = Vector2(0.6, 0)
 repeat_size = Vector2(320, 0)
-repeat_times = 3
+repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/front and hut"]
 position = Vector2(160, 90)
@@ -185,11 +189,22 @@ position = Vector2(-671, 149)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-1, -59)
+limit_right = 640
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.583362, 0.486894, 0.435048, 1)
+color = Color(0.840538, 0.773051, 0.737292, 1)
+
+[node name="next" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="next"]
+script = ExtResource("13_6eth5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next/Area2D"]
+position = Vector2(639, 156)
+shape = SubResource("RectangleShape2D_6eth5")
 
 [connection signal="body_entered" from="parallax/Parallax2D3/Area2D" to="parallax/Parallax2D3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="parallax/Parallax2D3/Area2D" to="parallax/Parallax2D3/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="parallax/Parallax2D3/right" to="parallax/Parallax2D3/right" method="_on_body_entered"]
 [connection signal="body_entered" from="parallax/Parallax2D3/left" to="parallax/Parallax2D3/left" method="_on_body_entered"]
+[connection signal="body_entered" from="next/Area2D" to="next/Area2D" method="_on_body_entered"]
