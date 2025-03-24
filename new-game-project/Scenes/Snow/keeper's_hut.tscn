@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2o31d3iuabky"]
+
+[ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://Scenes/Snow/Bg/para/clouds and hill .png" id="1_ue1sx"]
+[ext_resource type="Texture2D" uid="uid://bjo0w4vjxybxx" path="res://Scenes/Snow/Bg/para/paramiddlelayer.png" id="2_xuqyw"]
+[ext_resource type="Texture2D" uid="uid://c8em0b0wajne8" path="res://Scenes/Snow/Bg/para/frontl.png" id="3_xuqyw"]
+[ext_resource type="Texture2D" uid="uid://cajtea2x46hlk" path="res://Scenes/Snow/sprites/hut.png" id="4_jl6ms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3e6o"]
+atlas = ExtResource("4_jl6ms")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0qgt"]
+atlas = ExtResource("4_jl6ms")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krcrt"]
+atlas = ExtResource("4_jl6ms")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbadk"]
+atlas = ExtResource("4_jl6ms")
+region = Rect2(480, 0, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_otvvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3e6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0qgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krcrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbadk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="keeper\'s hut" type="Node2D"]
+
+[node name="parallax" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/Parallax2D"]
+position = Vector2(160, 90)
+texture = ExtResource("1_ue1sx")
+
+[node name="Parallax2D2" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.3, 0)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/Parallax2D2"]
+position = Vector2(160, 90)
+texture = ExtResource("2_xuqyw")
+
+[node name="front and hut" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.3, 0)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/front and hut"]
+position = Vector2(160, 90)
+texture = ExtResource("3_xuqyw")
+
+[node name="Parallax2D3" type="Parallax2D" parent="parallax"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="parallax/Parallax2D3"]
+position = Vector2(-193, 80)
+sprite_frames = SubResource("SpriteFrames_otvvm")
