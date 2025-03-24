@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2o31d3iuabky"]
+[gd_scene load_steps=12 format=3 uid="uid://b2o31d3iuabky"]
 
 [ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://Scenes/Snow/Bg/para/clouds and hill .png" id="1_ue1sx"]
 [ext_resource type="Texture2D" uid="uid://bjo0w4vjxybxx" path="res://Scenes/Snow/Bg/para/paramiddlelayer.png" id="2_xuqyw"]
 [ext_resource type="Texture2D" uid="uid://c8em0b0wajne8" path="res://Scenes/Snow/Bg/para/frontl.png" id="3_xuqyw"]
 [ext_resource type="Texture2D" uid="uid://cajtea2x46hlk" path="res://Scenes/Snow/sprites/hut.png" id="4_jl6ms"]
+[ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_a3e6o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3e6o"]
 atlas = ExtResource("4_jl6ms")
@@ -41,6 +42,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3e6o"]
+size = Vector2(27, 20)
+
 [node name="keeper\'s hut" type="Node2D"]
 
 [node name="parallax" type="Node2D" parent="."]
@@ -64,7 +68,7 @@ position = Vector2(160, 90)
 texture = ExtResource("2_xuqyw")
 
 [node name="front and hut" type="Parallax2D" parent="parallax"]
-scroll_scale = Vector2(0.3, 0)
+scroll_scale = Vector2(0.6, 0)
 repeat_size = Vector2(320, 0)
 repeat_times = 3
 
@@ -73,7 +77,24 @@ position = Vector2(160, 90)
 texture = ExtResource("3_xuqyw")
 
 [node name="Parallax2D3" type="Parallax2D" parent="parallax"]
+scroll_scale = Vector2(0.6, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="parallax/Parallax2D3"]
 position = Vector2(-193, 80)
 sprite_frames = SubResource("SpriteFrames_otvvm")
+autoplay = "default"
+frame_progress = 0.0368119
+
+[node name="Node" type="Node" parent="parallax/Parallax2D3"]
+
+[node name="Area2D" type="Area2D" parent="parallax/Parallax2D3/Node"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parallax/Parallax2D3/Node/Area2D"]
+position = Vector2(-193.5, 154)
+shape = SubResource("RectangleShape2D_a3e6o")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_a3e6o")]
+position = Vector2(-512, 149)
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-1, -59)
