@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var personright = $"personright"
+@onready var personright = $"../personright"
 
 func _ready():
 	personright.visible = false

@@ -169,16 +169,16 @@ script = ExtResource("9_085hq")
 position = Vector2(-151, 169.25)
 shape = SubResource("RectangleShape2D_xnd1r")
 
+[node name="personright" type="Sprite2D" parent="parallax/Parallax2D3/right"]
+position = Vector2(-194, 93)
+texture = ExtResource("11_3o6dq")
+
 [node name="left" type="Area2D" parent="parallax/Parallax2D3"]
 script = ExtResource("10_xnd1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="parallax/Parallax2D3/left"]
 position = Vector2(-171, 169)
 shape = SubResource("RectangleShape2D_3o6dq")
-
-[node name="personright" type="Sprite2D" parent="parallax/Parallax2D3"]
-position = Vector2(-194, 93)
-texture = ExtResource("11_3o6dq")
 
 [node name="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("5_a3e6o")]
 position = Vector2(-671, 149)
@@ -191,5 +191,3 @@ color = Color(0.583362, 0.486894, 0.435048, 1)
 
 [connection signal="body_entered" from="parallax/Parallax2D3/Area2D" to="parallax/Parallax2D3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="parallax/Parallax2D3/Area2D" to="parallax/Parallax2D3/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="parallax/Parallax2D3/right" to="parallax/Parallax2D3/right" method="_on_body_entered"]
-[connection signal="body_entered" from="parallax/Parallax2D3/left" to="parallax/Parallax2D3/left" method="_on_body_entered"]
