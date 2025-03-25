@@ -36,11 +36,11 @@ texture = ExtResource("4_5luef")
 2:5/0 = 0
 3:5/0 = 0
 4:5/0 = 0
-4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -3.95689, -8, -3.95689, -8, -8)
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -1.43887, 8, 8, -5.2159, 8, -8, 8, -8, -1.43887)
 5:5/0 = 0
-5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -3.95689, -8, -3.95689, -8, -8)
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -1.43887, 8, 8, -5.2159, 8, -8, 8, -8, -1.43887)
 6:5/0 = 0
-6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, -3.95689, -8, -3.95689, -8, -8)
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -1.43887, 8, 8, -5.2159, 8, -8, 8, -8, -1.43887)
 7:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_u1bhy"]
@@ -88,6 +88,7 @@ layer_0/tile_data = PackedInt32Array(524280, 131072, 2, 589816, 131072, 3, 65535
 position = Vector2(-120, 117)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
-offset = Vector2(0, -27)
 limit_left = -320
+limit_top = 0
 limit_right = 960
+limit_bottom = 180
