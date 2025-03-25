@@ -198,6 +198,7 @@ position = Vector2(1, -60)
 texture = ExtResource("4_s54ac")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(2, -58)
 enabled = false
 limit_right = 320
