@@ -182,6 +182,7 @@ vframes = 11
 frame = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 18)
 shape = SubResource("RectangleShape2D_og2l7")
 
