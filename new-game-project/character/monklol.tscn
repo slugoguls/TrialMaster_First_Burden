@@ -167,6 +167,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+light_mask = 4
 script = ExtResource("1_og2l7")
 
 [node name="health" type="Sprite2D" parent="."]
@@ -175,6 +176,7 @@ position = Vector2(-124, -134)
 texture = ExtResource("2_uf21q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 4
 position = Vector2(0, -7)
 texture = ExtResource("1_prv2j")
 hframes = 8

@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://crvjp3h5dm5w8"]
+[gd_scene load_steps=9 format=3 uid="uid://crvjp3h5dm5w8"]
 
 [ext_resource type="Texture2D" uid="uid://ds2k8lmspyk55" path="res://Scenes/SnowToTrail/bg/Transition scene.png" id="1_10mh6"]
 [ext_resource type="Script" uid="uid://dpgrouvvu3r2f" path="res://Code/snow_trans.gd" id="1_bunvl"]
 [ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://Scenes/Snow/Bg/para/clouds and hill .png" id="1_rye8w"]
 [ext_resource type="Texture2D" uid="uid://bjo0w4vjxybxx" path="res://Scenes/Snow/Bg/para/paramiddlelayer.png" id="2_bunvl"]
 [ext_resource type="Script" uid="uid://c1tuvnu4kjnqx" path="res://Scenes/SnowToTrail/tohut.gd" id="5_7xjsy"]
+[ext_resource type="Script" uid="uid://m10m270cvj7h" path="res://Scenes/SnowToTrail/snowtoforest.gd" id="6_wy2qr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wy2qr"]
 size = Vector2(20, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xjsy"]
+size = Vector2(20, 45)
 
 [node name="snowTrans" type="Node2D"]
 script = ExtResource("1_bunvl")
@@ -44,4 +48,12 @@ script = ExtResource("5_7xjsy")
 position = Vector2(-9, 108)
 shape = SubResource("RectangleShape2D_wy2qr")
 
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("6_wy2qr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(328, 165.5)
+shape = SubResource("RectangleShape2D_7xjsy")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
