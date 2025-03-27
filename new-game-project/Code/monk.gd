@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -400.0
 const GRAVITY = 980.0 # Standard gravity value
 
 @onready var animation_player = $AnimationPlayer
-@onready var map_sprite = $Map
+@onready var map_sprite = $CanvasLayer/Map
 var is_attacking = false
 var is_facing_left = false
 var is_map_open = false

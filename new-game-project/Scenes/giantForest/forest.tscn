@@ -413,6 +413,7 @@ limit_bottom = 180
 position = Vector2(-294, 104)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.209505, 0.2364, 0.275171, 1)
 
 [connection signal="body_entered" from="Sprites/Keeper\'sShop/Area2D" to="Sprites/Keeper\'sShop/Area2D" method="_on_body_entered"]

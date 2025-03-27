@@ -193,13 +193,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_uf21q")
 }
 
-[node name="Map" type="Sprite2D" parent="."]
-visible = false
-light_mask = 2
-z_index = 1
-position = Vector2(1, -60)
-texture = ExtResource("4_s54ac")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(2, -58)
@@ -211,5 +204,11 @@ limit_right = 320
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(32, 17)
 texture = ExtResource("2_uf21q")
+
+[node name="Map" type="Sprite2D" parent="CanvasLayer"]
+light_mask = 2
+z_index = 1
+position = Vector2(160, 90)
+texture = ExtResource("4_s54ac")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
