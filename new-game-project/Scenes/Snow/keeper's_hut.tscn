@@ -162,6 +162,7 @@ sprite_frames = SubResource("SpriteFrames_6eth5")
 animation = &"person"
 
 [node name="InteractE" type="Sprite2D" parent="parallax/Parallax2D3/Area2D"]
+light_mask = 256
 position = Vector2(-194, 103)
 texture = ExtResource("7_otvvm")
 
@@ -169,6 +170,7 @@ texture = ExtResource("7_otvvm")
 position = Vector2(9.53674e-06, 0)
 scale = Vector2(0.0498047, 0.0498047)
 color = Color(1, 1, 0, 1)
+range_item_cull_mask = 256
 texture = ExtResource("6_krcrt")
 
 [node name="right" type="Area2D" parent="parallax/Parallax2D3"]

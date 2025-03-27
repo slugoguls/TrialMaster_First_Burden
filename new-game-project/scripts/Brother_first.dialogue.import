@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://eq7b2auot8sr"
+path="res://.godot/imported/Brother_first.dialogue-708233f13c9b41fb591479f6e83e340d.tres"
+
+[deps]
+
+source_file="res://scripts/Brother_first.dialogue"
+dest_files=["res://.godot/imported/Brother_first.dialogue-708233f13c9b41fb591479f6e83e340d.tres"]
+
+[params]
+
+defaults=true

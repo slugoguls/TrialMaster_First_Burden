@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://br0ec7mupaowf"]
+[gd_scene load_steps=29 format=3 uid="uid://br0ec7mupaowf"]
 
 [ext_resource type="Script" uid="uid://tru7fq82cfs2" path="res://Scenes/giantForest/forest.gd" id="1_3sei5"]
 [ext_resource type="Texture2D" uid="uid://bmcyskxxa05n0" path="res://Scenes/giantForest/bg/clouds.png" id="1_f8eru"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_vgh01"]
 [ext_resource type="Texture2D" uid="uid://dlgcyfwr220xf" path="res://Scenes/giantForest/bg/platformtrees.png" id="5_wi4eu"]
 [ext_resource type="Texture2D" uid="uid://sg3xso5rijf2" path="res://misc art/keeper's Shop.png" id="7_t3h0j"]
+[ext_resource type="Script" uid="uid://oks8m3b31rwh" path="res://Scenes/giantForest/keeperBhai.gd" id="9_37gbo"]
 [ext_resource type="Texture2D" uid="uid://8kusg8p0d7v3" path="res://misc art/LampSheet.png" id="9_tssas"]
+[ext_resource type="Texture2D" uid="uid://bocpii2qvv6ro" path="res://misc art/hud/interact e.png" id="10_vftmu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgh01"]
 texture = ExtResource("4_5luef")
@@ -51,6 +53,9 @@ texture = ExtResource("4_5luef")
 [sub_resource type="TileSet" id="TileSet_u1bhy"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vgh01")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tssas"]
+size = Vector2(51, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37gbo"]
 atlas = ExtResource("9_tssas")
@@ -286,6 +291,25 @@ color = Color(0.74902, 0.74902, 0, 1)
 range_item_cull_mask = 8
 texture = ExtResource("4_vgh01")
 
+[node name="Area2D" type="Area2D" parent="Sprites/Keeper\'sShop"]
+script = ExtResource("9_37gbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprites/Keeper\'sShop/Area2D"]
+position = Vector2(-1.5, 48)
+shape = SubResource("RectangleShape2D_tssas")
+
+[node name="InteractE" type="Sprite2D" parent="Sprites/Keeper\'sShop/Area2D"]
+light_mask = 256
+position = Vector2(0, -15)
+texture = ExtResource("10_vftmu")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprites/Keeper\'sShop/Area2D/InteractE"]
+position = Vector2(-3.33786e-06, 0.999998)
+scale = Vector2(0.074707, 0.0595703)
+color = Color(1, 1, 0, 1)
+range_item_cull_mask = 256
+texture = ExtResource("4_vgh01")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprites"]
 light_mask = 8
 position = Vector2(-176, 73)
@@ -389,5 +413,7 @@ limit_bottom = 180
 position = Vector2(-294, 104)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.209505, 0.2364, 0.275171, 1)
+
+[connection signal="body_entered" from="Sprites/Keeper\'sShop/Area2D" to="Sprites/Keeper\'sShop/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Sprites/Keeper\'sShop/Area2D" to="Sprites/Keeper\'sShop/Area2D" method="_on_body_exited"]

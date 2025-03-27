@@ -1,0 +1,11 @@
+~ start
+Zauma: Did my brother send you here?
+Zauma: Anyways, If you are here that means my brother wanted you here. 
+Zauma: you are in the long forest, home to the lampfolks.
+Zauma: I have lived here for as long as I can remember and it has made me one of them.
+Zauma: People of the town barely visit this place now, You must be destined.
+Zauma: I can't tell you much about the curse if that is what you seek.
+Zauma: you must talk to the trial master for that.
+Zauma: also, try to stay away from the abyss.
+do DialogueManager.dialogue_ended.emit()
+=> END
