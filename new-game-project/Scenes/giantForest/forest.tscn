@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://br0ec7mupaowf"]
+[gd_scene load_steps=33 format=3 uid="uid://br0ec7mupaowf"]
 
 [ext_resource type="Script" uid="uid://tru7fq82cfs2" path="res://Scenes/giantForest/forest.gd" id="1_3sei5"]
 [ext_resource type="Texture2D" uid="uid://bmcyskxxa05n0" path="res://Scenes/giantForest/bg/clouds.png" id="1_f8eru"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://oks8m3b31rwh" path="res://Scenes/giantForest/keeperBhai.gd" id="9_37gbo"]
 [ext_resource type="Texture2D" uid="uid://8kusg8p0d7v3" path="res://misc art/LampSheet.png" id="9_tssas"]
 [ext_resource type="Texture2D" uid="uid://bocpii2qvv6ro" path="res://misc art/hud/interact e.png" id="10_vftmu"]
+[ext_resource type="Script" uid="uid://lbtd32aada5q" path="res://Scenes/giantForest/toabyss.gd" id="13_e7h5p"]
+[ext_resource type="Script" uid="uid://d3hf4scf1bov1" path="res://Scenes/giantForest/toSnow.gd" id="14_w31n2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgh01"]
 texture = ExtResource("4_5luef")
@@ -148,6 +150,12 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w31n2"]
+size = Vector2(16, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7h5p"]
+size = Vector2(20, 101)
 
 [node name="Forest" type="Node2D"]
 script = ExtResource("1_3sei5")
@@ -416,5 +424,24 @@ position = Vector2(-294, 104)
 visible = false
 color = Color(0.209505, 0.2364, 0.275171, 1)
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("13_e7h5p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(959, 132)
+shape = SubResource("RectangleShape2D_w31n2")
+
+[node name="fromAbyss" type="Marker2D" parent="."]
+position = Vector2(935, 103)
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("14_w31n2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-323, 142)
+shape = SubResource("RectangleShape2D_e7h5p")
+
 [connection signal="body_entered" from="Sprites/Keeper\'sShop/Area2D" to="Sprites/Keeper\'sShop/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Sprites/Keeper\'sShop/Area2D" to="Sprites/Keeper\'sShop/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
