@@ -1,15 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtq5kjjfxoay6"]
+[gd_scene load_steps=5 format=3 uid="uid://dtq5kjjfxoay6"]
 
+[ext_resource type="Script" uid="uid://d4irj1cq4kjfi" path="res://Scenes/abyssToTrail/abyss_to_trial.gd" id="1_d48xf"]
 [ext_resource type="Texture2D" uid="uid://cu0qc42ixxrt3" path="res://Scenes/abyssToTrail/bg/abyssToTrial.png" id="1_of2i0"]
+[ext_resource type="Script" uid="uid://c2al5coo4gog0" path="res://Scenes/abyssToTrail/toAbyssfromTrial.gd" id="2_uw81h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of2i0"]
+size = Vector2(20, 91)
 
 [node name="abyssToTrial" type="Node2D"]
+script = ExtResource("1_d48xf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(160, 90)
 texture = ExtResource("1_of2i0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 158, 117, 153, 232, 140, 301, 124, 324, 116, 325, 189, -12, 197, -8, 159)
+polygon = PackedVector2Array(1, 162, 117, 155, 233, 145, 303, 127, 326, 119, 325, 189, -12, 197, -8, 163)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_uw81h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 137.5)
+shape = SubResource("RectangleShape2D_of2i0")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(325, 79)
+shape = SubResource("RectangleShape2D_of2i0")
+
+[node name="fromAbyss" type="Marker2D" parent="."]
+position = Vector2(23, 126)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
