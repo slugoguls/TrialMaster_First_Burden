@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtq5kjjfxoay6"]
+
+[ext_resource type="Texture2D" uid="uid://cu0qc42ixxrt3" path="res://Scenes/abyssToTrail/bg/abyssToTrial.png" id="1_of2i0"]
+
+[node name="abyssToTrial" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1_of2i0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 158, 117, 153, 232, 140, 301, 124, 324, 116, 325, 189, -12, 197, -8, 159)
