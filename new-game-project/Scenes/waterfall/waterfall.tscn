@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsfdujeklv2b0"]
+
+[ext_resource type="Texture2D" uid="uid://b25wdfwjhy76s" path="res://Scenes/waterfall/bg/waterfallSheet.png" id="1_n8uix"]
+[ext_resource type="Script" uid="uid://iqt0ofjwk7gv" path="res://Scenes/waterfall/waterfall.gd" id="1_qvhxo"]
+[ext_resource type="Script" uid="uid://8yx2et5en60f" path="res://Scenes/waterfall/totrail.gd" id="3_2m4km"]
+[ext_resource type="Script" uid="uid://dml1lqi8pfr6v" path="res://Scenes/waterfall/ToTown.gd" id="4_bb6tj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvhxo"]
+atlas = ExtResource("1_n8uix")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m4km"]
+atlas = ExtResource("1_n8uix")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb6tj"]
+atlas = ExtResource("1_n8uix")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5rdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvhxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m4km")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb6tj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m4km"]
+size = Vector2(20, 86)
+
+[node name="waterfall" type="Node2D"]
+script = ExtResource("1_qvhxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_s5rdp")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-165, 72, -105, 72, -60, 68, -4, 53, 39, 42, 64, 38, 82, 39, 114, 46, 168, 61, 171, 131, -247, 131)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_2m4km")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6, 144)
+shape = SubResource("RectangleShape2D_2m4km")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("4_bb6tj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(324, 137)
+shape = SubResource("RectangleShape2D_2m4km")
+
+[node name="fromTrail" type="Marker2D" parent="."]
+position = Vector2(30, 127)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

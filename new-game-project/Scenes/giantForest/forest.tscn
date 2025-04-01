@@ -421,7 +421,6 @@ limit_bottom = 180
 position = Vector2(-294, 104)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.209505, 0.2364, 0.275171, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
