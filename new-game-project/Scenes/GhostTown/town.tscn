@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2odkgmpxl6my"]
+[gd_scene load_steps=17 format=3 uid="uid://c2odkgmpxl6my"]
 
 [ext_resource type="Texture2D" uid="uid://bh40ngt6uain5" path="res://Scenes/GhostTown/TheTownCloudsHills.png" id="1_ed0aw"]
 [ext_resource type="Script" uid="uid://depnb6skwicqu" path="res://Scenes/GhostTown/town.gd" id="1_qldoh"]
 [ext_resource type="Texture2D" uid="uid://cfaqhnfy0av4v" path="res://Scenes/GhostTown/HouseofTheTown.png" id="3_wv0nq"]
 [ext_resource type="Texture2D" uid="uid://dey6yxvq54nl5" path="res://Scenes/GhostTown/tilesetforTown.png" id="3_x1axr"]
 [ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_wv0nq"]
+[ext_resource type="Script" uid="uid://b0unvarux4bik" path="res://Scenes/GhostTown/TheLampAnimated.gd" id="6_0iign"]
+[ext_resource type="Texture2D" uid="uid://qhxm0bve45t8" path="res://misc art/lifeLampSheet.png" id="6_hioyt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qldoh"]
 texture = ExtResource("3_x1axr")
@@ -47,6 +49,52 @@ texture = ExtResource("3_x1axr")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qldoh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1gaq"]
+size = Vector2(26, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iign"]
+atlas = ExtResource("6_hioyt")
+region = Rect2(0, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1gaq"]
+atlas = ExtResource("6_hioyt")
+region = Rect2(32, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug1yp"]
+atlas = ExtResource("6_hioyt")
+region = Rect2(64, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ju1q"]
+atlas = ExtResource("6_hioyt")
+region = Rect2(96, 0, 32, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbrrb"]
+atlas = ExtResource("6_hioyt")
+region = Rect2(128, 0, 32, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4d6xu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iign")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1gaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug1yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ju1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbrrb")
+}],
+"loop": false,
+"name": &"lamp_animation",
+"speed": 5.0
+}]
+
 [node name="Town" type="Node2D"]
 script = ExtResource("1_qldoh")
 
@@ -78,6 +126,21 @@ layer_0/tile_data = PackedInt32Array(524288, 65536, 3, 589824, 65536, 4, 655360,
 [node name="fromWaterfall" type="Marker2D" parent="."]
 position = Vector2(42, 102)
 
+[node name="lamps" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="lamps"]
+script = ExtResource("6_0iign")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lamps/Area2D"]
+position = Vector2(67, 137)
+shape = SubResource("RectangleShape2D_f1gaq")
+
+[node name="the animated" type="AnimatedSprite2D" parent="lamps/Area2D"]
+position = Vector2(79, 68)
+sprite_frames = SubResource("SpriteFrames_4d6xu")
+animation = &"lamp_animation"
+offset = Vector2(-1, 3)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("5_wv0nq")]
 position = Vector2(-100, 123)
 
@@ -87,3 +150,6 @@ limit_left = -640
 limit_top = 0
 limit_right = 1280
 limit_bottom = 180
+
+[connection signal="body_entered" from="lamps/Area2D" to="lamps/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="lamps/Area2D" to="lamps/Area2D" method="_on_body_exited"]

@@ -1,0 +1,7 @@
+~ start
+Lampu: one second....
+Lampu: what is your name
+Lampu: woahhhhhhhh
+Lampu: byeeeeeeeee
+do DialogueManager.dialogue_ended.emit()
+=> END 

@@ -302,6 +302,7 @@ enabled = false
 limit_right = 320
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(32, 17)
