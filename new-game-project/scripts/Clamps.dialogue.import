@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dk7i1s81lg75h"
+path="res://.godot/imported/Clamps.dialogue-49b76193aedcb0f5e0a67378f08a0c5f.tres"
+
+[deps]
+
+source_file="res://scripts/Clamps.dialogue"
+dest_files=["res://.godot/imported/Clamps.dialogue-49b76193aedcb0f5e0a67378f08a0c5f.tres"]
+
+[params]
+
+defaults=true

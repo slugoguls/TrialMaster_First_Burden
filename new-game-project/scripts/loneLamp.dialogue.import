@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://x8u1sehptm7i"
+path="res://.godot/imported/loneLamp.dialogue-5f0ea1124b807d8779ce714e9e6ab3a8.tres"
+
+[deps]
+
+source_file="res://scripts/loneLamp.dialogue"
+dest_files=["res://.godot/imported/loneLamp.dialogue-5f0ea1124b807d8779ce714e9e6ab3a8.tres"]
+
+[params]
+
+defaults=true

@@ -1,7 +1,12 @@
 ~ start
 Lampu: one second....
-Lampu: what is your name
+Lampu: You are not from here, are you?
 Lampu: woahhhhhhhh
-Lampu: byeeeeeeeee
+Lampu: Are you here to set us free? 
+Lampu: I don't know what that means, I have always been like this.
+Lampu: I have heard whispers of the townfolks about the curse.
+Lampu: I dont know what will happen to me if they are right.
+Lampu: anyways, You can talk to others but,
+Lampu: they are not as friendly as me.
 do DialogueManager.dialogue_ended.emit()
 => END 

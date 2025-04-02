@@ -1,0 +1,6 @@
+~ start
+The curse has turned us into monsters
+But, atleast we are still together
+It makes it barable 
+do DialogueManager.dialogue_ended.emit()
+=> END

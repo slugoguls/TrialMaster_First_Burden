@@ -1,0 +1,5 @@
+~ start
+Oh, did you talk to the smith?
+heard him say something about some new visiter
+do DialogueManager.dialogue_ended.emit()
+=> END

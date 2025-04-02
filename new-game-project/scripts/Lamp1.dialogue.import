@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://yid714p2ehmm"
+path="res://.godot/imported/Lamp1.dialogue-5d3b25b29188abfb1bf262885e1997be.tres"
+
+[deps]
+
+source_file="res://scripts/Lamp1.dialogue"
+dest_files=["res://.godot/imported/Lamp1.dialogue-5d3b25b29188abfb1bf262885e1997be.tres"]
+
+[params]
+
+defaults=true

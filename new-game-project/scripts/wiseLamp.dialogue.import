@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bvju4aayeicyv"
+path="res://.godot/imported/wiseLamp.dialogue-317ddec8d4374d09fb6b11ed1edc1bce.tres"
+
+[deps]
+
+source_file="res://scripts/wiseLamp.dialogue"
+dest_files=["res://.godot/imported/wiseLamp.dialogue-317ddec8d4374d09fb6b11ed1edc1bce.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,13 @@
+~ start
+The Smith: It seems like the keeper has faith in you.
+The Smith: He was our last hope before the curse broke through.
+The Smith: Don't be afraid of the watchers, they are merely spirits of the dead
+The Smith: They do not know that they are dead
+The Smith: I try not to converse with them, I dont want them to know
+The Smith: We have heard rumors of the prophecy
+The Smith: They are just curious to see a new face in such a long time.
+The Smith: The curse made me do terrible terrible thing....
+The Smith: Please save us, monk in chains
+The Smith: For your curse is greater than ours.
+do DialogueManager.dialogue_ended.emit()
+=> END 

@@ -1,0 +1,9 @@
+~ start
+I was gonna propose to her you know
+I was going to ask her to run away with me
+before the curse did this to us
+I don't know what to do now
+I am okay with whatever the curse does to me
+Atleast.. I can still see her from here
+do DialogueManager.dialogue_ended.emit()
+=> END

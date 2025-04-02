@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://darcmy74ietjd"
+path="res://.godot/imported/nocBhai1.dialogue-7a3baf7260367deeaad202088c9aef3e.tres"
+
+[deps]
+
+source_file="res://scripts/nocBhai1.dialogue"
+dest_files=["res://.godot/imported/nocBhai1.dialogue-7a3baf7260367deeaad202088c9aef3e.tres"]
+
+[params]
+
+defaults=true
