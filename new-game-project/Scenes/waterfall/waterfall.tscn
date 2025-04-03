@@ -68,5 +68,8 @@ shape = SubResource("RectangleShape2D_2m4km")
 [node name="fromTrail" type="Marker2D" parent="."]
 position = Vector2(30, 127)
 
+[node name="fromTown" type="Marker2D" parent="."]
+position = Vector2(301, 97)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
