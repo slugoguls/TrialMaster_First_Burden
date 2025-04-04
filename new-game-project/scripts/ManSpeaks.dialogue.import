@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://6l4p65ql5pww"
+path="res://.godot/imported/ManSpeaks.dialogue-ed563c215469dbf6306e706d18789726.tres"
+
+[deps]
+
+source_file="res://scripts/ManSpeaks.dialogue"
+dest_files=["res://.godot/imported/ManSpeaks.dialogue-ed563c215469dbf6306e706d18789726.tres"]
+
+[params]
+
+defaults=true

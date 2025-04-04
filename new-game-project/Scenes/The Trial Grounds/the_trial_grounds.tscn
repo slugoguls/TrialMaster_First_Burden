@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://djjdbpjh2clu6"]
+[gd_scene load_steps=16 format=3 uid="uid://djjdbpjh2clu6"]
 
 [ext_resource type="Script" uid="uid://gsm42dfnjule" path="res://Scenes/The Trial Grounds/the_trial_grounds.gd" id="1_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://dvguoabm3vf0f" path="res://Scenes/The Trial Grounds/para/clouds and hills.png" id="1_uepqv"]
@@ -7,8 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_213gh"]
 [ext_resource type="Texture2D" uid="uid://bkau5uq07ai7t" path="res://misc art/TheHangers(B).png" id="5_dfyoa"]
 [ext_resource type="Script" uid="uid://yjtti72vs4u2" path="res://Scenes/The Trial Grounds/to_gate.gd" id="6_5utsj"]
+[ext_resource type="Script" uid="uid://cd16lxd3nsi8n" path="res://Scenes/The Trial Grounds/manspeaks.gd" id="6_plcn5"]
 [ext_resource type="Texture2D" uid="uid://t81pk12gi7yy" path="res://misc art/TheHangers(nB).png" id="6_w00qj"]
+[ext_resource type="AudioStream" uid="uid://bx0nms1ns5ucb" path="res://character/the aduio of man.mp3" id="7_ad1ew"]
 [ext_resource type="Texture2D" uid="uid://c617djy67l1xw" path="res://misc art/The throne.png" id="7_o7k02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w00qj"]
+size = Vector2(79, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8rbi"]
 size = Vector2(1552, 20)
@@ -63,6 +68,17 @@ scroll_scale = Vector2(0.6, 0)
 position = Vector2(-46, 75)
 texture = ExtResource("5_dfyoa")
 
+[node name="Area2D" type="Area2D" parent="para/hangers3/hanger"]
+script = ExtResource("6_plcn5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="para/hangers3/hanger/Area2D"]
+position = Vector2(24, 57.5)
+shape = SubResource("RectangleShape2D_w00qj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="para/hangers3/hanger/Area2D"]
+stream = ExtResource("7_ad1ew")
+volume_db = 10.0
+
 [node name="hangers2" type="Parallax2D" parent="para"]
 scroll_scale = Vector2(0.6, 0)
 
@@ -114,4 +130,6 @@ limit_bottom = 180
 
 [node name="objects" type="Node2D" parent="."]
 
+[connection signal="body_entered" from="para/hangers3/hanger/Area2D" to="para/hangers3/hanger/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="para/hangers3/hanger/Area2D" to="para/hangers3/hanger/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="ToGate" to="ToGate" method="_on_body_entered"]
