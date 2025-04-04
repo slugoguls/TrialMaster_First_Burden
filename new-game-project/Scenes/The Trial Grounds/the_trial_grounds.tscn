@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://djjdbpjh2clu6"]
+[gd_scene load_steps=13 format=3 uid="uid://djjdbpjh2clu6"]
 
 [ext_resource type="Script" uid="uid://gsm42dfnjule" path="res://Scenes/The Trial Grounds/the_trial_grounds.gd" id="1_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://dvguoabm3vf0f" path="res://Scenes/The Trial Grounds/para/clouds and hills.png" id="1_uepqv"]
 [ext_resource type="Texture2D" uid="uid://dv8nc38gyf63n" path="res://Scenes/The Trial Grounds/para/ground and pillars.png" id="2_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://ddfxa1okw4c3u" path="res://Scenes/The Trial Grounds/para/foreground pillars.png" id="3_213gh"]
 [ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_213gh"]
+[ext_resource type="Texture2D" uid="uid://bkau5uq07ai7t" path="res://misc art/TheHangers(B).png" id="5_dfyoa"]
 [ext_resource type="Script" uid="uid://yjtti72vs4u2" path="res://Scenes/The Trial Grounds/to_gate.gd" id="6_5utsj"]
+[ext_resource type="Texture2D" uid="uid://t81pk12gi7yy" path="res://misc art/TheHangers(nB).png" id="6_w00qj"]
 [ext_resource type="Texture2D" uid="uid://c617djy67l1xw" path="res://misc art/The throne.png" id="7_o7k02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8rbi"]
@@ -46,6 +48,27 @@ scroll_scale = Vector2(0.6, 0)
 [node name="Throne" type="Sprite2D" parent="para/Parallax2D"]
 position = Vector2(639, 110)
 texture = ExtResource("7_o7k02")
+
+[node name="hangers" type="Parallax2D" parent="para"]
+scroll_scale = Vector2(0.6, 0)
+
+[node name="hanger" type="Sprite2D" parent="para/hangers"]
+position = Vector2(-46, 75)
+texture = ExtResource("5_dfyoa")
+
+[node name="hangers3" type="Parallax2D" parent="para"]
+scroll_scale = Vector2(0.6, 0)
+
+[node name="hanger" type="Sprite2D" parent="para/hangers3"]
+position = Vector2(-46, 75)
+texture = ExtResource("5_dfyoa")
+
+[node name="hangers2" type="Parallax2D" parent="para"]
+scroll_scale = Vector2(0.6, 0)
+
+[node name="hanger" type="Sprite2D" parent="para/hangers2"]
+position = Vector2(274, 74)
+texture = ExtResource("6_w00qj")
 
 [node name="foregroundPillars" type="Parallax2D" parent="para"]
 z_index = 1
