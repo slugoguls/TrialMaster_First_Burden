@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://djjdbpjh2clu6"]
+[gd_scene load_steps=11 format=3 uid="uid://djjdbpjh2clu6"]
 
 [ext_resource type="Script" uid="uid://gsm42dfnjule" path="res://Scenes/The Trial Grounds/the_trial_grounds.gd" id="1_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://dvguoabm3vf0f" path="res://Scenes/The Trial Grounds/para/clouds and hills.png" id="1_uepqv"]
@@ -6,9 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://ddfxa1okw4c3u" path="res://Scenes/The Trial Grounds/para/foreground pillars.png" id="3_213gh"]
 [ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_213gh"]
 [ext_resource type="Script" uid="uid://yjtti72vs4u2" path="res://Scenes/The Trial Grounds/to_gate.gd" id="6_5utsj"]
+[ext_resource type="Texture2D" uid="uid://c617djy67l1xw" path="res://misc art/The throne.png" id="7_o7k02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8rbi"]
 size = Vector2(1552, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7k02"]
+size = Vector2(45, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_213gh"]
 size = Vector2(20, 92)
@@ -36,24 +40,23 @@ repeat_times = 3
 position = Vector2(160, 90)
 texture = ExtResource("2_s8rbi")
 
+[node name="Parallax2D" type="Parallax2D" parent="para"]
+scroll_scale = Vector2(0.6, 0)
+
+[node name="Throne" type="Sprite2D" parent="para/Parallax2D"]
+position = Vector2(639, 110)
+texture = ExtResource("7_o7k02")
+
 [node name="foregroundPillars" type="Parallax2D" parent="para"]
 z_index = 1
 scroll_scale = Vector2(0.6, 0)
+scroll_offset = Vector2(10, 0)
 repeat_size = Vector2(320, 0)
 repeat_times = 3
 
 [node name="CloudsAndHills" type="Sprite2D" parent="para/foregroundPillars"]
 position = Vector2(160, 90)
 texture = ExtResource("3_213gh")
-
-[node name="CharacterBody2D" parent="para" instance=ExtResource("5_213gh")]
-position = Vector2(-240, 124)
-
-[node name="Camera2D2" type="Camera2D" parent="para/CharacterBody2D"]
-limit_left = -320
-limit_top = 0
-limit_right = 960
-limit_bottom = 180
 
 [node name="FromGate" type="Marker2D" parent="."]
 position = Vector2(-295, 83)
@@ -64,11 +67,28 @@ position = Vector2(-295, 83)
 position = Vector2(386, 160)
 shape = SubResource("RectangleShape2D_s8rbi")
 
+[node name="platformCol2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platformCol2"]
+position = Vector2(873, 118)
+shape = SubResource("RectangleShape2D_o7k02")
+
 [node name="ToGate" type="Area2D" parent="."]
 script = ExtResource("6_5utsj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToGate"]
 position = Vector2(-322, 104)
 shape = SubResource("RectangleShape2D_213gh")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_213gh")]
+position = Vector2(-240, 124)
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+limit_left = -320
+limit_top = 0
+limit_right = 960
+limit_bottom = 180
+
+[node name="objects" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="ToGate" to="ToGate" method="_on_body_entered"]
