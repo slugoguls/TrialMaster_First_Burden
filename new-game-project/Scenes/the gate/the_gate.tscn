@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://da0d7j2jqfyf6"]
+[gd_scene load_steps=8 format=3 uid="uid://da0d7j2jqfyf6"]
 
 [ext_resource type="Texture2D" uid="uid://d0hiogow4bkcg" path="res://Scenes/the gate/thegateScene.png" id="1_awpoo"]
 [ext_resource type="Script" uid="uid://b1jnljw7nwodv" path="res://Scenes/the gate/the_gate.gd" id="1_ix1hy"]
 [ext_resource type="Texture2D" uid="uid://bb0u3g0gxcb7k" path="res://Scenes/the gate/Thegateback.png" id="2_ix1hy"]
 [ext_resource type="Texture2D" uid="uid://b6ksq2nwofh2d" path="res://Scenes/the gate/thegatefront.png" id="3_38rne"]
+[ext_resource type="Script" uid="uid://bwhnpclma8et0" path="res://Scenes/the gate/to_town.gd" id="5_38rne"]
+[ext_resource type="Script" uid="uid://cogyl204mxqcx" path="res://Scenes/the gate/to_trials.gd" id="6_tgwjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgwjv"]
+size = Vector2(20, 74)
 
 [node name="The gate" type="Node2D"]
 script = ExtResource("1_ix1hy")
@@ -29,3 +34,23 @@ polygon = PackedVector2Array(-32, 137, 82, 137, 169, 127, 252, 114, 323, 112, 32
 z_index = 1
 position = Vector2(251, 76)
 texture = ExtResource("3_38rne")
+
+[node name="ToTown" type="Area2D" parent="."]
+script = ExtResource("5_38rne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToTown"]
+position = Vector2(-3, 107)
+shape = SubResource("RectangleShape2D_tgwjv")
+
+[node name="ToTrials" type="Area2D" parent="."]
+script = ExtResource("6_tgwjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToTrials"]
+position = Vector2(325, 106)
+shape = SubResource("RectangleShape2D_tgwjv")
+
+[node name="FromTrialGround" type="Marker2D" parent="."]
+position = Vector2(298, 66)
+
+[connection signal="body_entered" from="ToTown" to="ToTown" method="_on_body_entered"]
+[connection signal="body_entered" from="ToTrials" to="ToTrials" method="_on_body_entered"]

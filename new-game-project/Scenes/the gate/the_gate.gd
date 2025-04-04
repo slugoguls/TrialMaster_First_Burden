@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var marker_from_Town = $FromTown
-@onready var marker_from_TrialGround= null
+@onready var marker_from_TrialGround= $FromTrialGround
 
 func _ready():
 	var spawn_position: Vector2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c2odkgmpxl6my"]
+[gd_scene load_steps=34 format=3 uid="uid://c2odkgmpxl6my"]
 
 [ext_resource type="Texture2D" uid="uid://bh40ngt6uain5" path="res://Scenes/GhostTown/TheTownCloudsHills.png" id="1_ed0aw"]
 [ext_resource type="Script" uid="uid://depnb6skwicqu" path="res://Scenes/GhostTown/town.gd" id="1_qldoh"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bocpii2qvv6ro" path="res://misc art/hud/interact e.png" id="11_4d6xu"]
 [ext_resource type="Script" uid="uid://c228eq70k82ke" path="res://Scenes/GhostTown/wiseLamp.gd" id="11_vs6kw"]
 [ext_resource type="Script" uid="uid://bku1vesi3ptcc" path="res://Scenes/GhostTown/to_gate.gd" id="17_og5nq"]
+[ext_resource type="Script" uid="uid://bqf2uoecmo732" path="res://Scenes/GhostTown/towaterfall.gd" id="18_jogyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qldoh"]
 texture = ExtResource("3_x1axr")
@@ -509,15 +510,18 @@ script = ExtResource("17_og5nq")
 position = Vector2(1298, 132)
 shape = SubResource("RectangleShape2D_og5nq")
 
-[node name="ToGate2" type="Area2D" parent="."]
-script = ExtResource("17_og5nq")
+[node name="Towaterfall" type="Area2D" parent="."]
+script = ExtResource("18_jogyg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToGate2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Towaterfall"]
 position = Vector2(-660, 132)
 shape = SubResource("RectangleShape2D_og5nq")
 
 [node name="fromWaterfall" type="Marker2D" parent="."]
 position = Vector2(-615, 98)
+
+[node name="fromGate" type="Marker2D" parent="."]
+position = Vector2(1259, 111)
 
 [connection signal="body_entered" from="lamps/Area2D" to="lamps/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="lamps/Area2D" to="lamps/Area2D" method="_on_body_exited"]
@@ -532,4 +536,4 @@ position = Vector2(-615, 98)
 [connection signal="body_entered" from="smith/noc/Area2D" to="smith/noc/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="smith/noc/Area2D" to="smith/noc/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="ToGate" to="ToGate" method="_on_body_entered"]
-[connection signal="body_entered" from="ToGate2" to="ToGate2" method="_on_body_entered"]
+[connection signal="body_entered" from="Towaterfall" to="Towaterfall" method="_on_body_entered"]
