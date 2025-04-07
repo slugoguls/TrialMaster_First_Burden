@@ -199,7 +199,7 @@ position = Vector2(-1, -59)
 limit_right = 640
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.840538, 0.773051, 0.737292, 1)
+color = Color(0.61969, 0.66774, 0.805602, 1)
 
 [node name="next" type="Node2D" parent="."]
 

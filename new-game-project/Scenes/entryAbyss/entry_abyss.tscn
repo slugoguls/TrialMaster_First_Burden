@@ -28,7 +28,7 @@ position = Vector2(158.5, 181.5)
 shape = SubResource("RectangleShape2D_fs0y7")
 
 [node name="fromForest" type="Marker2D" parent="."]
-position = Vector2(21, 139)
+position = Vector2(21, 149)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_2w1pe")
@@ -45,7 +45,10 @@ position = Vector2(324, 133.5)
 shape = SubResource("RectangleShape2D_hvglt")
 
 [node name="fromTrial" type="Marker2D" parent="."]
-position = Vector2(299, 139)
+position = Vector2(299, 153)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.439475, 0.496699, 0.658233, 1)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

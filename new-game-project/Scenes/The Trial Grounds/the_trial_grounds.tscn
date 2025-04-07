@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://djjdbpjh2clu6"]
+[gd_scene load_steps=15 format=3 uid="uid://djjdbpjh2clu6"]
 
 [ext_resource type="Script" uid="uid://gsm42dfnjule" path="res://Scenes/The Trial Grounds/the_trial_grounds.gd" id="1_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://dvguoabm3vf0f" path="res://Scenes/The Trial Grounds/para/clouds and hills.png" id="1_uepqv"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://yjtti72vs4u2" path="res://Scenes/The Trial Grounds/to_gate.gd" id="6_5utsj"]
 [ext_resource type="Script" uid="uid://cd16lxd3nsi8n" path="res://Scenes/The Trial Grounds/manspeaks.gd" id="6_plcn5"]
 [ext_resource type="Texture2D" uid="uid://t81pk12gi7yy" path="res://misc art/TheHangers(nB).png" id="6_w00qj"]
-[ext_resource type="AudioStream" uid="uid://bx0nms1ns5ucb" path="res://character/the aduio of man.mp3" id="7_ad1ew"]
 [ext_resource type="Texture2D" uid="uid://c617djy67l1xw" path="res://misc art/The throne.png" id="7_o7k02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w00qj"]
@@ -75,10 +74,6 @@ script = ExtResource("6_plcn5")
 position = Vector2(24, 57.5)
 shape = SubResource("RectangleShape2D_w00qj")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="para/hangers3/hanger/Area2D"]
-stream = ExtResource("7_ad1ew")
-volume_db = 10.0
-
 [node name="hangers2" type="Parallax2D" parent="para"]
 scroll_scale = Vector2(0.6, 0)
 
@@ -98,7 +93,7 @@ position = Vector2(160, 90)
 texture = ExtResource("3_213gh")
 
 [node name="FromGate" type="Marker2D" parent="."]
-position = Vector2(-295, 83)
+position = Vector2(-297, 129)
 
 [node name="platformCol" type="StaticBody2D" parent="."]
 
@@ -129,6 +124,9 @@ limit_right = 960
 limit_bottom = 180
 
 [node name="objects" type="Node2D" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.390996, 0.449669, 0.611681, 1)
 
 [connection signal="body_entered" from="para/hangers3/hanger/Area2D" to="para/hangers3/hanger/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="para/hangers3/hanger/Area2D" to="para/hangers3/hanger/Area2D" method="_on_body_exited"]

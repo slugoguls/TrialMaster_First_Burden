@@ -66,10 +66,13 @@ position = Vector2(324, 137)
 shape = SubResource("RectangleShape2D_2m4km")
 
 [node name="fromTrail" type="Marker2D" parent="."]
-position = Vector2(30, 127)
+position = Vector2(24, 141)
 
 [node name="fromTown" type="Marker2D" parent="."]
-position = Vector2(301, 97)
+position = Vector2(300, 119)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.442118, 0.501145, 0.662054, 1)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

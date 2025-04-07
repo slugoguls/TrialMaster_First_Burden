@@ -418,10 +418,10 @@ limit_right = 960
 limit_bottom = 180
 
 [node name="fromSnow" type="Marker2D" parent="."]
-position = Vector2(-294, 104)
+position = Vector2(-302, 119)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.209505, 0.2364, 0.275171, 1)
+color = Color(0.372342, 0.425809, 0.582988, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("13_e7h5p")
@@ -431,13 +431,13 @@ position = Vector2(959, 132)
 shape = SubResource("RectangleShape2D_w31n2")
 
 [node name="fromAbyss" type="Marker2D" parent="."]
-position = Vector2(935, 103)
+position = Vector2(935, 118)
 
 [node name="Area2D2" type="Area2D" parent="."]
 script = ExtResource("14_w31n2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-323, 142)
+position = Vector2(-326, 142)
 shape = SubResource("RectangleShape2D_e7h5p")
 
 [connection signal="body_entered" from="Sprites/Keeper\'sShop/Area2D" to="Sprites/Keeper\'sShop/Area2D" method="_on_body_entered"]

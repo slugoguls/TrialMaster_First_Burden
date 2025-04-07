@@ -501,7 +501,7 @@ limit_right = 1280
 limit_bottom = 180
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.365069, 0.337958, 0.402054, 1)
+color = Color(0.30682, 0.358099, 0.501203, 1)
 
 [node name="ToGate" type="Area2D" parent="."]
 script = ExtResource("17_og5nq")
@@ -518,10 +518,10 @@ position = Vector2(-660, 132)
 shape = SubResource("RectangleShape2D_og5nq")
 
 [node name="fromWaterfall" type="Marker2D" parent="."]
-position = Vector2(-615, 98)
+position = Vector2(-622, 134)
 
 [node name="fromGate" type="Marker2D" parent="."]
-position = Vector2(1259, 111)
+position = Vector2(1262, 135)
 
 [connection signal="body_entered" from="lamps/Area2D" to="lamps/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="lamps/Area2D" to="lamps/Area2D" method="_on_body_exited"]

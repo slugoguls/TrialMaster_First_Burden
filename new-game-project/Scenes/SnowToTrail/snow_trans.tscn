@@ -33,7 +33,7 @@ position = Vector2(160, 90)
 texture = ExtResource("1_10mh6")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(16, 103)
+position = Vector2(13, 109)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -56,10 +56,10 @@ position = Vector2(328, 165.5)
 shape = SubResource("RectangleShape2D_7xjsy")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.525742, 0.444954, 0.385689, 1)
+color = Color(0.514898, 0.568191, 0.727349, 1)
 
 [node name="fromForest" type="Marker2D" parent="."]
-position = Vector2(305, 151)
+position = Vector2(305, 161)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
