@@ -3,6 +3,7 @@ extends Node2D
 @onready var marker_from_Gate = $FromGate
 
 func _ready():
+	PlayerManager.Map_loco = "Grounds"
 	var spawn_position: Vector2
 	if PlayerManager.previous_location == "Gate":
 		spawn_position = marker_from_Gate.global_position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://da0d7j2jqfyf6"]
+[gd_scene load_steps=9 format=3 uid="uid://da0d7j2jqfyf6"]
 
 [ext_resource type="Script" uid="uid://b1jnljw7nwodv" path="res://Scenes/the gate/the_gate.gd" id="1_ix1hy"]
 [ext_resource type="Texture2D" uid="uid://bb0u3g0gxcb7k" path="res://Scenes/the gate/Thegateback.png" id="2_ix1hy"]
@@ -9,6 +9,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgwjv"]
 size = Vector2(20, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhc64"]
+size = Vector2(20, 70.5)
 
 [node name="The gate" type="Node2D"]
 script = ExtResource("1_ix1hy")
@@ -54,6 +57,12 @@ position = Vector2(303, 96)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.334382, 0.387931, 0.53979, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(227, 55.75)
+shape = SubResource("RectangleShape2D_rhc64")
 
 [connection signal="body_entered" from="ToTown" to="ToTown" method="_on_body_entered"]
 [connection signal="body_entered" from="ToTrials" to="ToTrials" method="_on_body_entered"]

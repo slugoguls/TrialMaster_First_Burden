@@ -4,6 +4,7 @@ var player_scene = preload("res://character/monklol.tscn")
 var player_instance: CharacterBody2D = null
 var last_position: Vector2 = Vector2.ZERO
 var previous_location: String = ""  # Track previous location
+var Map_loco: String = ""
 
 func spawn_player(parent: Node, position: Vector2):
 	# Check if player already exists

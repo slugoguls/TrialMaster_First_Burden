@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready():
 	GLobal.use_gravity = false
+	PlayerManager.Map_loco = "Keeper"
 	if GLobal.first_load == false:
 		var spawn_position = marker.global_position
 		PlayerManager.spawn_player(self, spawn_position)

@@ -1,9 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://b6i5hryvh755i"]
+[gd_scene load_steps=26 format=3 uid="uid://b6i5hryvh755i"]
 
 [ext_resource type="Script" uid="uid://yond4griyb6o" path="res://Code/monk.gd" id="1_og2l7"]
 [ext_resource type="Texture2D" uid="uid://4h8rv1n8vshs" path="res://character/widebattlemonkt.png" id="1_prv2j"]
 [ext_resource type="Texture2D" uid="uid://bv7chy0bxjjws" path="res://misc art/hud/health and mana.png" id="2_uf21q"]
-[ext_resource type="Texture2D" uid="uid://ca2gs83o3ovwe" path="res://misc art/hud/Map for game.png" id="4_s54ac"]
+[ext_resource type="Texture2D" uid="uid://bi41cs05x5cac" path="res://misc art/hud/Map/Map(base).png" id="4_yhsp5"]
+[ext_resource type="Texture2D" uid="uid://cm4f251tsowqh" path="res://misc art/hud/Map/Map(grounds).png" id="5_jj1pw"]
+[ext_resource type="Texture2D" uid="uid://cfbw4xjx2vvap" path="res://misc art/hud/Map/Map(Keeper).png" id="6_wj7l8"]
+[ext_resource type="Texture2D" uid="uid://cl3xlsrs1f7oo" path="res://misc art/hud/Map/Map(Town)).png" id="7_4n2te"]
+[ext_resource type="Texture2D" uid="uid://ctd3a6xl5sl35" path="res://misc art/hud/Map/Map(Woods).png" id="8_bay7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og2l7"]
 size = Vector2(20, 7)
@@ -302,7 +306,6 @@ enabled = false
 limit_right = 320
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(32, 17)
@@ -312,6 +315,22 @@ texture = ExtResource("2_uf21q")
 light_mask = 2
 z_index = 1
 position = Vector2(160, 90)
-texture = ExtResource("4_s54ac")
+texture = ExtResource("4_yhsp5")
+
+[node name="Map(grounds)" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(160, 90)
+texture = ExtResource("5_jj1pw")
+
+[node name="Map(keeper)" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(160, 90)
+texture = ExtResource("6_wj7l8")
+
+[node name="Map(town))" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(160, 90)
+texture = ExtResource("7_4n2te")
+
+[node name="Map(woods)" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(160, 90)
+texture = ExtResource("8_bay7p")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

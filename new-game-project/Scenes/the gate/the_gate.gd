@@ -4,6 +4,7 @@ extends Node2D
 @onready var marker_from_TrialGround= $FromTrialGround
 
 func _ready():
+	PlayerManager.Map_loco = "Town"
 	var spawn_position: Vector2
 	if PlayerManager.previous_location == "Town":
 		spawn_position = marker_from_Town.global_position

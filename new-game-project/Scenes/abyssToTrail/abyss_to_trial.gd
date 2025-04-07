@@ -4,6 +4,7 @@ extends Node2D
 @onready var marker_from_waterfall = $fromWaterfall
 
 func _ready():
+	PlayerManager.Map_loco = "Forest"
 	var spawn_position: Vector2
 	if PlayerManager.previous_location == "abyss":
 		spawn_position = marker_from_abyss.global_position
