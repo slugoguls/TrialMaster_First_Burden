@@ -67,7 +67,7 @@ left={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://scripts/keeper_first.dialogue", "res://scripts/monk_map.dialogue", "res://scripts/Brother_first.dialogue", "res://scripts/LampConvo.dialogue", "res://scripts/nocBhai1.dialogue", "res://scripts/Lamp1.dialogue", "res://scripts/Clamps.dialogue", "res://scripts/loneLamp.dialogue", "res://scripts/wiseLamp.dialogue", "res://scripts/ManSpeaks.dialogue")
+locale/translations_pot_files=PackedStringArray("res://scripts/keeper_first.dialogue", "res://scripts/monk_map.dialogue", "res://scripts/Brother_first.dialogue", "res://scripts/LampConvo.dialogue", "res://scripts/nocBhai1.dialogue", "res://scripts/Lamp1.dialogue", "res://scripts/Clamps.dialogue", "res://scripts/loneLamp.dialogue", "res://scripts/wiseLamp.dialogue", "res://scripts/ManSpeaks.dialogue", "res://scripts/start1.dialogue", "res://scripts/start2.dialogue", "res://scripts/start3.dialogue", "res://scripts/TrialMaster.dialogue")
 
 [rendering]
 

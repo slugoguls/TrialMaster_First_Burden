@@ -1,13 +1,18 @@
 ~ start
-The Smith: It seems like the keeper has faith in you.
-The Smith: He was our last hope before the curse broke through.
-The Smith: Don't be afraid of the watchers, they are merely spirits of the dead
-The Smith: They do not know that they are dead
-The Smith: I try not to converse with them, I dont want them to know
-The Smith: We have heard rumors of the prophecy
-The Smith: They are just curious to see a new face in such a long time.
-The Smith: The curse made me do terrible terrible thing....
-The Smith: Please save us, monk in chains
+The Smith: So the Keeper still believes...
+The Smith: He was our last hope before the curse broke us.
+The Smith: Don't fear the Watchers. They're only the echoes of the dead.
+The Smith: They don't know they've passed.
+The Smith: And I don't speak to them lest they remember.
+The Smith: They whisper of prophecy, old as the bones beneath us.
+The Smith: They’re drawn to your presence… we haven’t seen change in so long.
+The Smith: This curse... it made me forge horrors in its name.
+The Smith: Chains that bound the innocent. Armor etched with names I swore to protect.
+The Smith: I became a craftsman of regret.
+The Smith: And yet... even in my shame, I see it.
+The Smith: You carry a deeper sin than any of us.
+The Smith: You wear your chains well, monk.
+The Smith: May you break what we could not.
 The Smith: For your curse is greater than ours.
 do DialogueManager.dialogue_ended.emit()
 => END 

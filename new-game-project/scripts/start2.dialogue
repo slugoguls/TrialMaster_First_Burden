@@ -1,0 +1,9 @@
+~ start
+From silence came rot.
+The land twisted. Forests burned cold. The sky no longer wept.
+Some became lanterns, their bodies hollow, souls flickering.
+Others wore their guilt like chains.
+
+And some were never seen again.
+do DialogueManager.dialogue_ended.emit()
+=> END

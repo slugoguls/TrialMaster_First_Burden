@@ -1,11 +1,12 @@
 ~ start
-The keeper: A monk like you does not belong here.
-The keeper: If you have come to get rid of your sins, I should warn you
-The keeper: The path ahead is not for one who guilts but for one who wants peace
-The keeper: You carry your family's curse and that has left you alone
-The keeper: follow the path and you will find my brother near the trial grounds
-The keeper: I'm not sure if he can get rid of the curse
-The keeper: But he will help you get peace with it
-The keeper: Take this map, it will help you navigate these mountains. 
+The Keeper: A monk in chains... I feared the day would come.  
+The Keeper: You carry not just your guilt, but the burden of your kin.  
+The Keeper: This road leads to no absolution, only quiet.  
+The Keeper: Beyond the cliffs lies the Forest.
+The keeper: That's where my brother chose to stay among the flickering souls.
+The keeper: He walks close to the edge of the Trials now.
+The keeper: He cannot break your curse. 
+The keeper: But he may help you bear it.
+The Keeper: Take this map. The mountains are cruel to memory, but chains do not forget.
 do DialogueManager.dialogue_ended.emit()
 => END 

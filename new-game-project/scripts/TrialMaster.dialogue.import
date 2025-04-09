@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bcv85i2iywahr"
+path="res://.godot/imported/TrialMaster.dialogue-b97ab3c120414588511602e46b812538.tres"
+
+[deps]
+
+source_file="res://scripts/TrialMaster.dialogue"
+dest_files=["res://.godot/imported/TrialMaster.dialogue-b97ab3c120414588511602e46b812538.tres"]
+
+[params]
+
+defaults=true

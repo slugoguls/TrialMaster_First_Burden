@@ -1,0 +1,9 @@
+~ start
+The flame once stood tall in the heart of the land.
+It watched over the people, burning away their sins.
+Pilgrims came with prayers, monks with vows.
+And the world was quiet.
+
+Until the flame stopped speaking.
+do DialogueManager.dialogue_ended.emit()
+=> END

@@ -1,0 +1,9 @@
+~ start
+But not all hope was lost.
+A monk, cursed and chained, now walks the silent roads.
+Not in search of answers 
+But remembrance.
+
+The Keeper waits. The trial begins.
+do DialogueManager.dialogue_ended.emit()
+=> END

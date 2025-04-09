@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c617djy67l1xw" path="res://misc art/The throne.png" id="7_o7k02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plcn5"]
-size = Vector2(93, 29)
+size = Vector2(122, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w00qj"]
 size = Vector2(79, 35)
@@ -61,7 +61,7 @@ texture = ExtResource("7_o7k02")
 script = ExtResource("5_ad1ew")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="para/Parallax2D/Throne/Area2D"]
-position = Vector2(-86.5, 25)
+position = Vector2(128, 25)
 shape = SubResource("RectangleShape2D_plcn5")
 
 [node name="hangers" type="Parallax2D" parent="para"]

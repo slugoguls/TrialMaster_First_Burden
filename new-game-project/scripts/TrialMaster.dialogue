@@ -1,0 +1,15 @@
+~ start
+The TrialMaster: I asked them to trust me.  
+The TrialMaster: Said the flame would cleanse... but it only watched.  
+The TrialMaster: They came with sins. And I... gave them peace.  
+The TrialMaster: Peace in silence. Peace in blood.  
+The TrialMaster: You were there, weren't you? 
+The TrialMaster: One of the hands that held the chains... before you ran.  
+The TrialMaster: Tell me, monk, was it mercy? Or was it murder?  
+The TrialMaster: Their voices still call my name. But their mouths no longer move.  
+The TrialMaster: I was meant to guard the Trial Grounds.  
+The TrialMaster: Instead, I turned them into a tomb.  
+The TrialMaster: Come, monk in chains.  
+The TrialMaster: Let us see if your burden outweighs mine.
+do DialogueManager.dialogue_ended.emit()
+=> END

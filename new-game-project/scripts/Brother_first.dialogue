@@ -1,11 +1,15 @@
 ~ start
-Zauma: Did my brother send you here?
-Zauma: Anyways, If you are here that means my brother wanted you here. 
-Zauma: you are in the long forest, home to the lampfolks.
-Zauma: I have lived here for as long as I can remember and it has made me one of them.
-Zauma: People of the town barely visit this place now, You must be destined.
-Zauma: I can't tell you much about the curse if that is what you seek.
-Zauma: you must talk to the trial master for that.
-Zauma: also, try to stay away from the abyss.
+Zauma: You carry it, don't you? The curse and those chains.
+Zauma: If my brother sent you, then he believes you're ready.
+Zauma: This place, it's old. Older than the curse, maybe.
+Zauma: The Lampfolk live here or what's left of them.
+Zauma: Their bodies burn, but their minds are drifting ash.
+Zauma: I've stayed among them too long.
+Zauma: I don't speak much with people anymore.
+Zauma: The town turned its back on these woods. Left only echoes.
+Zauma: Your curse, I've felt its shadow, but I don't know its shape.
+Zauma: If you seek answers, find the Trial Master. He still listens.
+Zauma: But don't stray near the Abyss.
+Zauma: The Long Forest forgets, The Abyss does not.
 do DialogueManager.dialogue_ended.emit()
 => END
