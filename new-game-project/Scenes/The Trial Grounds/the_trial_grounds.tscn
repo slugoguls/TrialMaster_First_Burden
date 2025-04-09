@@ -1,16 +1,45 @@
-[gd_scene load_steps=17 format=3 uid="uid://djjdbpjh2clu6"]
+[gd_scene load_steps=21 format=3 uid="uid://djjdbpjh2clu6"]
 
 [ext_resource type="Script" uid="uid://gsm42dfnjule" path="res://Scenes/The Trial Grounds/the_trial_grounds.gd" id="1_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://dvguoabm3vf0f" path="res://Scenes/The Trial Grounds/para/clouds and hills.png" id="1_uepqv"]
 [ext_resource type="Texture2D" uid="uid://dv8nc38gyf63n" path="res://Scenes/The Trial Grounds/para/ground and pillars.png" id="2_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://ddfxa1okw4c3u" path="res://Scenes/The Trial Grounds/para/foreground pillars.png" id="3_213gh"]
+[ext_resource type="Texture2D" uid="uid://vm208tdw0mhk" path="res://misc art/The throne Sheet.png" id="4_ad1ew"]
 [ext_resource type="PackedScene" uid="uid://b6i5hryvh755i" path="res://character/monklol.tscn" id="5_213gh"]
 [ext_resource type="Script" uid="uid://bhwmubnyslefe" path="res://Scenes/The Trial Grounds/TheTrialMaster.gd" id="5_ad1ew"]
 [ext_resource type="Texture2D" uid="uid://bkau5uq07ai7t" path="res://misc art/TheHangers(B).png" id="5_dfyoa"]
 [ext_resource type="Script" uid="uid://yjtti72vs4u2" path="res://Scenes/The Trial Grounds/to_gate.gd" id="6_5utsj"]
 [ext_resource type="Script" uid="uid://cd16lxd3nsi8n" path="res://Scenes/The Trial Grounds/manspeaks.gd" id="6_plcn5"]
 [ext_resource type="Texture2D" uid="uid://t81pk12gi7yy" path="res://misc art/TheHangers(nB).png" id="6_w00qj"]
-[ext_resource type="Texture2D" uid="uid://c617djy67l1xw" path="res://misc art/The throne.png" id="7_o7k02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2xjr"]
+atlas = ExtResource("4_ad1ew")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp3lk"]
+atlas = ExtResource("4_ad1ew")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fujaj"]
+atlas = ExtResource("4_ad1ew")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aweet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2xjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp3lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fujaj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_plcn5"]
 size = Vector2(93, 29)
@@ -53,16 +82,29 @@ texture = ExtResource("2_s8rbi")
 [node name="Parallax2D" type="Parallax2D" parent="para"]
 scroll_scale = Vector2(0.6, 0)
 
-[node name="Throne" type="Sprite2D" parent="para/Parallax2D"]
+[node name="Area2D" type="Area2D" parent="para/Parallax2D"]
 position = Vector2(639, 110)
-texture = ExtResource("7_o7k02")
-
-[node name="Area2D" type="Area2D" parent="para/Parallax2D/Throne"]
 script = ExtResource("5_ad1ew")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="para/Parallax2D/Throne/Area2D"]
+[node name="Throne" type="AnimatedSprite2D" parent="para/Parallax2D/Area2D"]
+sprite_frames = SubResource("SpriteFrames_aweet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="para/Parallax2D/Area2D"]
 position = Vector2(-86.5, 25)
 shape = SubResource("RectangleShape2D_plcn5")
+
+[node name="BlackFlash" type="ColorRect" parent="para/Parallax2D/Area2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = 102.0
+offset_right = 179.04
+offset_bottom = 119.34
+grow_vertical = 2
+scale = Vector2(-26.8363, -15.7914)
+color = Color(0, 0, 0, 1)
 
 [node name="hangers" type="Parallax2D" parent="para"]
 scroll_scale = Vector2(0.6, 0)
@@ -139,8 +181,8 @@ limit_bottom = 180
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.390996, 0.449669, 0.611681, 1)
 
-[connection signal="body_entered" from="para/Parallax2D/Throne/Area2D" to="para/Parallax2D/Throne/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="para/Parallax2D/Throne/Area2D" to="para/Parallax2D/Throne/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="para/Parallax2D/Area2D" to="para/Parallax2D/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="para/Parallax2D/Area2D" to="para/Parallax2D/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="para/hangers3/hanger/Area2D" to="para/hangers3/hanger/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="para/hangers3/hanger/Area2D" to="para/hangers3/hanger/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="ToGate" to="ToGate" method="_on_body_entered"]

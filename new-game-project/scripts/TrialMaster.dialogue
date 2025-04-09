@@ -8,7 +8,8 @@ The TrialMaster: One of the hands that held the chains... before you ran.
 The TrialMaster: Tell me, monk, was it mercy? Or was it murder?  
 The TrialMaster: Their voices still call my name. But their mouths no longer move.  
 The TrialMaster: I was meant to guard the Trial Grounds.  
-The TrialMaster: Instead, I turned them into a tomb.  
+The TrialMaster: Instead, I turned them into a tomb.
+do GLobal.StandUp.emit()
 The TrialMaster: Come, monk in chains.  
 The TrialMaster: Let us see if your burden outweighs mine.
 do DialogueManager.dialogue_ended.emit()

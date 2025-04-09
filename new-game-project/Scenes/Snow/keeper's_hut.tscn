@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b2o31d3iuabky"]
+[gd_scene load_steps=31 format=3 uid="uid://b2o31d3iuabky"]
 
 [ext_resource type="Script" uid="uid://2n7nuqrk4rns" path="res://Scenes/Snow/keeper's_hut.gd" id="1_bn5lp"]
 [ext_resource type="Texture2D" uid="uid://ck5a1j2ijf0m1" path="res://Scenes/Snow/Bg/para/clouds and hill .png" id="1_ue1sx"]
@@ -100,7 +100,10 @@ size = Vector2(2, 26)
 size = Vector2(13, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn5lp"]
-size = Vector2(1074, 20)
+size = Vector2(1871, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdrav"]
+size = Vector2(64, 292)
 
 [node name="keeper\'s hut" type="Node2D"]
 script = ExtResource("1_bn5lp")
@@ -192,7 +195,7 @@ position = Vector2(-194, 93)
 texture = ExtResource("11_3o6dq")
 
 [node name="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("5_a3e6o")]
-position = Vector2(-671, 149)
+position = Vector2(-1011, 149)
 
 [node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-1, -59)
@@ -216,8 +219,14 @@ position = Vector2(620, 154)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(101, 181)
+position = Vector2(-297.5, 181)
 shape = SubResource("RectangleShape2D_bn5lp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-1201, 133)
+shape = SubResource("RectangleShape2D_tdrav")
 
 [connection signal="body_entered" from="parallax/Parallax2D3/Area2D" to="parallax/Parallax2D3/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="parallax/Parallax2D3/Area2D" to="parallax/Parallax2D3/Area2D" method="_on_body_exited"]
