@@ -1,7 +1,7 @@
 ~ start
-I can here the guy sobbing every night
-He needs to accept the fate we have recieved
-atleast, we still exist
-goodluck, Monk in chains
+I hear him sob every night.
+He hasn't accepted what we've become.
+But at least... we still exist.
+Good luck, monk in chains.
 do DialogueManager.dialogue_ended.emit()
 => END

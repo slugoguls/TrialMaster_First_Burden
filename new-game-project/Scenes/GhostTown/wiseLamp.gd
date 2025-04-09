@@ -34,7 +34,7 @@ func start_interaction() -> void:
 			else:
 				animation_player.play("idle_r")
 
-	var dialogue_resource = load("res://scripts/loneLamp.dialogue")
+	var dialogue_resource = load("res://scripts/wiseLamp.dialogue")
 	if dialogue_resource == null:
 		printerr("Failed to load dialogue resource!")
 		return

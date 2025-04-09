@@ -17,6 +17,7 @@ var current_slide := 0
 
 func _ready():
 	for slide in slides:
+		slide.visible = false
 		slide.modulate.a = 0.0
 
 	show_current_slide()
@@ -26,12 +27,15 @@ func show_current_slide():
 	var dialogue_path: String = dialogue_paths[current_slide]
 
 	slide.visible = true
-	slide.modulate.a = 0.0
-	await fade_in(slide)
+
+	# Only fade in if it's the first slide
+	if current_slide == 0:
+		await fade_in(slide)
+	else:
+		slide.modulate.a = 1.0  # Instantly show without fade-in
 
 	DialogueManager.show_dialogue_balloon(load(dialogue_path), "start")
 	DialogueManager.connect("dialogue_ended", Callable(self, "_on_dialogue_ended"), CONNECT_DEFERRED)
-
 
 func _on_dialogue_ended():
 	DialogueManager.disconnect("dialogue_ended", Callable(self, "_on_dialogue_ended"))

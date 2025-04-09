@@ -1,12 +1,12 @@
 ~ start
-Lampu: one second....
-Lampu: You are not from here, are you?
-Lampu: woahhhhhhhh
-Lampu: Are you here to set us free? 
-Lampu: I don't know what that means, I have always been like this.
-Lampu: I have heard whispers of the townfolks about the curse.
-Lampu: I dont know what will happen to me if they are right.
-Lampu: anyways, You can talk to others but,
-Lampu: they are not as friendly as me.
+Lampu: Wait a sec...
+Lampu: You're not from around here, are you?
+Lampu: Wooooah... you're all... real.
+Lampu: Are you here to free us?
+Lampu: I don't really know what that means. I've always been this way.
+Lampu: Sometimes I hear the townsfolk whisper about a curse.
+Lampu: I wonder what I'll become... if they're right.
+Lampu: You can speak to the others, but...
+Lampu: They're not as nice as me.
 do DialogueManager.dialogue_ended.emit()
-=> END 
+=> END

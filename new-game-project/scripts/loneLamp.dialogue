@@ -1,9 +1,9 @@
 ~ start
-I was gonna propose to her you know
-I was going to ask her to run away with me
-before the curse did this to us
-I don't know what to do now
-I am okay with whatever the curse does to me
-Atleast.. I can still see her from here
+I was going to propose to her, you know.
+Ask her to run far from here... before the curse found us.
+But it was faster than love.
+Now I don’t know what to do.
+Let it take me, I suppose.
+At least... I can still see her from here.
 do DialogueManager.dialogue_ended.emit()
 => END
