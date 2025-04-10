@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://djjdbpjh2clu6"]
+[gd_scene load_steps=22 format=3 uid="uid://djjdbpjh2clu6"]
 
 [ext_resource type="Script" uid="uid://gsm42dfnjule" path="res://Scenes/The Trial Grounds/the_trial_grounds.gd" id="1_s8rbi"]
 [ext_resource type="Texture2D" uid="uid://dvguoabm3vf0f" path="res://Scenes/The Trial Grounds/para/clouds and hills.png" id="1_uepqv"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bkau5uq07ai7t" path="res://misc art/TheHangers(B).png" id="5_dfyoa"]
 [ext_resource type="Script" uid="uid://yjtti72vs4u2" path="res://Scenes/The Trial Grounds/to_gate.gd" id="6_5utsj"]
 [ext_resource type="Texture2D" uid="uid://t81pk12gi7yy" path="res://misc art/TheHangers(nB).png" id="6_w00qj"]
+[ext_resource type="Texture2D" uid="uid://bocpii2qvv6ro" path="res://misc art/hud/interact e.png" id="6_x2xjr"]
+[ext_resource type="Texture2D" uid="uid://b52h4m2wjibs2" path="res://misc art/light.png" id="7_cp3lk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2xjr"]
 atlas = ExtResource("4_ad1ew")
@@ -104,6 +106,18 @@ offset_bottom = 119.34
 grow_vertical = 2
 scale = Vector2(-26.8363, -15.7914)
 color = Color(0, 0, 0, 1)
+
+[node name="InteractE" type="Sprite2D" parent="para/Parallax2D/Area2D"]
+light_mask = 256
+position = Vector2(22, -44)
+texture = ExtResource("6_x2xjr")
+
+[node name="PointLight2D" type="PointLight2D" parent="para/Parallax2D/Area2D/InteractE"]
+position = Vector2(9.53674e-06, 0)
+scale = Vector2(0.0498047, 0.0498047)
+color = Color(1, 1, 0, 1)
+range_item_cull_mask = 256
+texture = ExtResource("7_cp3lk")
 
 [node name="hangers" type="Parallax2D" parent="para"]
 scroll_scale = Vector2(0.6, 0)
