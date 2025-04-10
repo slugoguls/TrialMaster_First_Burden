@@ -4,6 +4,8 @@ This Game is a playable prequel teaser for the real game!
 
 A/D  ======> walk left or right
 
+E   =======> Interact
+
 M    ======> Map
 
 C    ======> Light attack  (there are no enemies in the game lol)
