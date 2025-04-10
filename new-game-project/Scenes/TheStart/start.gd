@@ -12,7 +12,7 @@ extends Node2D
 	"res://scripts/start3.dialogue"
 ]
 
-@onready var fade_time := 1.5
+@onready var fade_time := 2
 var current_slide := 0
 
 func _ready():

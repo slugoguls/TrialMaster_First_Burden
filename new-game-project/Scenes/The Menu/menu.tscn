@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b52xb47xwmrfn"]
+
+[ext_resource type="Script" uid="uid://c38k20kyg4pja" path="res://Scenes/The Menu/menu.gd" id="1_52k0m"]
+[ext_resource type="Texture2D" uid="uid://oxi6n0hd3beh" path="res://Scenes/The Menu/MenuSmall.png" id="1_55kdq"]
+[ext_resource type="Texture2D" uid="uid://ofilv3bjooam" path="res://Scenes/The Menu/MenuBIG.png" id="2_52k0m"]
+[ext_resource type="Texture2D" uid="uid://bkiywfotru7uq" path="res://Scenes/The Menu/Preq.png" id="4_jodh3"]
+[ext_resource type="Texture2D" uid="uid://cmlqglic2emx2" path="res://Scenes/The Menu/resolve.png" id="5_i7uyn"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_52k0m")
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1_55kdq")
+
+[node name="StartSelected" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("2_52k0m")
+
+[node name="Preq" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("4_jodh3")
+
+[node name="Resolve" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("5_i7uyn")
+
+[node name="Fade" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Fade"]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)

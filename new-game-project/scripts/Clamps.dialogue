@@ -1,6 +1,6 @@
 ~ start
 The curse made monsters of us both.
-But... we’re still together.
+But... we're still together.
 That makes it bearable.
 do DialogueManager.dialogue_ended.emit()
 => END

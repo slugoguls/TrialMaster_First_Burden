@@ -2,7 +2,7 @@
 I was going to propose to her, you know.
 Ask her to run far from here... before the curse found us.
 But it was faster than love.
-Now I don’t know what to do.
+Now I don't know what to do.
 Let it take me, I suppose.
 At least... I can still see her from here.
 do DialogueManager.dialogue_ended.emit()
